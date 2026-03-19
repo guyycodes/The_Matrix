@@ -77,18 +77,8 @@ window.startTheMatrix = function (toggle) {
       .fade-out {
           opacity: 0;
       }
-      #youtubeVideo {
-          z-index: 1000; /* High z-index to ensure visibility */
-      }
       </style>
       <div id="code"></div>
-      <div style="position: absolute; bottom: 10px; width: 100%; text-align: center; z-index: 10;">
-          <iframe id="youtubeVideo" width="560" height="315"
-          src="https://www.youtube.com/embed/eH7qfq_KkVM?autoplay=1&controls=1&loop=1&mute=1&playlist=eH7qfq_KkVM"
-          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen title="YouTube video player"></iframe>
-      </div>
-      <h1 id="message" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white;">${message}</h1>
       `;
   
       startRain(); // Moved startRain here to ensure it runs after the DOM update
