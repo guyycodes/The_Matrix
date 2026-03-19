@@ -1,33 +1,9 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import { useColorMode, Box } from '@chakra-ui/react';
 import { css } from '@emotion/react';
-// import MatrixRain from '';
-
-// const script = document.createElement('script');
-// script.src = '../../../public/matrixRain'; // Adjust the path to your script
-// script.async = true;
 
 export const CustomThemeSwitchButton = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-
-  const handleClick = () =>{
-      window.location.reload();
-  }
-  
-  // we are trying to dynamically load a script that manipulates the DOM
-  const enterTheMatrix = async (themeColor) => {
-    try {
-      await import('../../../public/matrixRain');
-      if (themeColor !== 'dark' && window.startTheMatrix) {
-        window.startTheMatrix(true);
-        window.addEventListener('click', handleClick);
-      } else {
-        window.startTheMatrix(false);
-      }
-    } catch (error) {
-      console.error('Failed to load matrixRain script:', error);
-    }
-  };
   // Define your CSS here, using template literals to include dynamic parts if necessary
   const switchStyles = css`
     * {
@@ -264,7 +240,7 @@ export const CustomThemeSwitchButton = () => {
         type="checkbox" 
         role="switch" 
         checked={colorMode === 'dark'} 
-        onChange={() => {toggleColorMode(); enterTheMatrix(colorMode);}} 
+        onChange={toggleColorMode} 
         
       />
       

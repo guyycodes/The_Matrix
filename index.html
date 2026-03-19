@@ -107,23 +107,10 @@
     data-x_margin="18" 
     data-y_margin="18">
   </script>
-  <script src="https://www.youtube.com/iframe_api"></script>
   </head>
   <body>
 
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/The-Matrix/sw.js', { scope: '/The-Matrix/' })
-            .then(function(registration) {
-              console.log('PWA service worker ready');
-            }, function(err) {
-              console.log('PWA service worker registration failed: ', err);
-            });
-        });
-      }
-    </script>
   </body>
 </html>

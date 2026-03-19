@@ -15,9 +15,9 @@ export default defineConfig({
         theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
-        start_url: '/The-Matrix/', // start URL for GitHub Pages
-        id: '/The-Matrix/', //  a consistent ID for the app
-        scope: '/The-Matrix/', // the scope to restrict what URLs are considered part of the app
+        start_url: '/', // start URL for custom domain
+        id: '/', //  a consistent ID for the app
+        scope: '/', // the scope to restrict what URLs are considered part of the app
         icons: [
           // Include square icons as required by most devices
           {
@@ -56,6 +56,6 @@ export default defineConfig({
   ],
   build: {
     outDir: 'dist', // Default output directory
-    base: '/The-Matrix/', // Base public path set to match the GitHub repository name
   },
+  base: '/', // Root path for custom domain
 });

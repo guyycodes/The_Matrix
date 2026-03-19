@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Announcement } from './Components/announcementBar/announcement';
 import { Footer } from './Components/Footer/theFooter';
 import { Container, Box, CssBaseline, useTheme, Dialog, DialogTitle, DialogContent, IconButton, Button } from '@mui/material';
@@ -9,8 +9,22 @@ import CloseIcon from '@mui/icons-material/Close';
 import { AdBannerCarousel } from './Components/AdsCarousel/Carousel';
 import { AdBannerCarousel2 } from './Components/AdsCarousel/Carousel2';
 function App() {
-  const headerHeight = '64px'; // Example fixed header height
+  const headerHeight = '64px';
   const [isFormModalOpen, setIsFormModalOpen] = useState(false);
+
+  useEffect(() => {
+    const startMatrix = async () => {
+      try {
+        await import('../public/matrixRain');
+        if (window.startTheMatrix) {
+          window.startTheMatrix(true);
+        }
+      } catch (error) {
+        console.error('Failed to load matrixRain script:', error);
+      }
+    };
+    startMatrix();
+  }, []);
 
   const handleFormModalOpen = () => {
     setIsFormModalOpen(true);
